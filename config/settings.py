@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core'
+    'core',
+    'crispy_forms',
+    'crispy_bootstrap5'
+
 ]
 
 MIDDLEWARE = [
@@ -126,3 +129,5 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
