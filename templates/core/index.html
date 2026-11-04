@@ -1,10 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block content %}
+  <!-- MAIN -->
+  <main class="content">
+    <h2 class="mb-4">Усі задачі</h2>
+
+    <form class="input-group mb-4">
+      <input type="text" class="form-control" placeholder="Нова задача...">
+      <button class="btn btn-primary" type="submit">Додати</button>
+    </form>
+
+    <div class="task-list">
+      <!-- Картка задачі -->
+      <div class="card task">
+        <div class="card-body">
+          <div class="task-header">
+            <h5 class="task-title">Зробити макет сайту</h5>
+            <span class="badge priority-high">Високий</span>
+          </div>
+
+          <p class="task-desc">
+            Підготувати макет головної сторінки та сторінки каталогу у Figma.
+            Узгодити кольори та шрифти з клієнтом.
+          </p>
+
+          <div class="task-info">
+            <div><span class="label">Час</span>09:00 – 12:00</div>
+            <div><span class="label">Дедлайн</span><span class="deadline">05.11.2026</span></div>
+            <div><span class="label">Тег</span><span class="badge bg-primary">#робота</span></div>
+          </div>
+        </div>
+
+        <div class="card-footer task-footer">
+          <small class="text-muted">Створено: 01.11.2026</small>
+          <div class="task-actions">
+            <button class="btn btn-sm btn-outline-primary btn-update">Update</button>
+            <button class="btn btn-sm btn-outline-danger btn-delete">Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card task">
+        <div class="card-body">
+          <div class="task-header">
+            <input class="form-check-input" type="checkbox">
+            <h5 class="task-title">Надіслати звіт керівнику</h5>
+            <span class="badge priority-medium">Середній</span>
+          </div>
+
+          <p class="task-desc">
+            Зібрати дані за жовтень, оформити звіт у PDF і відправити на пошту.
+          </p>
+
+          <div class="task-info">
+            <div><span class="label">Час</span>13:00</div>
+            <div><span class="label">Дедлайн</span><span class="deadline overdue">03.11.2026 (прострочено)</span></div>
+            <div><span class="label">Тег</span><span class="badge bg-primary">#робота</span></div>
+          </div>
+        </div>
+
+        <div class="card-footer task-footer">
+          <small class="text-muted">Створено: 28.10.2026</small>
+          <div class="task-actions">
+            <button class="btn btn-sm btn-outline-primary btn-update">Update</button>
+            <button class="btn btn-sm btn-outline-danger btn-delete">Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card task">
+        <div class="card-body">
+          <div class="task-header">
+            <input class="form-check-input" type="checkbox">
+            <h5 class="task-title">Купити продукти</h5>
+            <span class="badge priority-low">Низький</span>
+          </div>
+
+          <p class="task-desc">
+            Молоко, хліб, яйця, овочі для салату.
+          </p>
+
+          <div class="task-info">
+            <div><span class="label">Час</span>18:00</div>
+            <div><span class="label">Дедлайн</span><span class="text-muted">—</span></div>
+            <div><span class="label">Тег</span><span class="badge bg-success">#покупки</span></div>
+          </div>
+        </div>
+
+        <div class="card-footer task-footer">
+          <small class="text-muted">Створено: 04.11.2026</small>
+          <div class="task-actions">
+            <button class="btn btn-sm btn-outline-primary btn-update">Update</button>
+            <button class="btn btn-sm btn-outline-danger btn-delete">Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card task done">
+        <div class="card-body">
+          <div class="task-header">
+            <input class="form-check-input" type="checkbox" checked>
+            <h5 class="task-title">Прочитати розділ книги</h5>
+            <span class="badge priority-low">Низький</span>
+          </div>
+
+          <p class="task-desc">
+            Розділ 5 «Чистий код» — функції та коментарі.
+          </p>
+
+          <div class="task-info">
+            <div><span class="label">Час</span>21:00</div>
+            <div><span class="label">Дедлайн</span>04.11.2026</div>
+            <div><span class="label">Тег</span><span class="badge bg-secondary">#навчання</span></div>
+          </div>
+        </div>
+
+        <div class="card-footer task-footer">
+          <small class="text-muted">Створено: 02.11.2026</small>
+          <div class="task-actions">
+            <button class="btn btn-sm btn-outline-primary btn-update">Update</button>
+            <button class="btn btn-sm btn-outline-danger btn-delete">Delete</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+{% endblock %}
