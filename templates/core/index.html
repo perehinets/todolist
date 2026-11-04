@@ -15,6 +15,7 @@
       <li>
         Tags: {% for tag in task.tags.all %} {{ tag.name }} {% endfor %}
       </li>
+      <li><a href="{% url 'core:task-update' pk=task.id %}">Update</a></li>
       <hr>
     {% endfor %}
   </ul>
