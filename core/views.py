@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 
-from core.models import Task
+from core.models import Task, Tag
 
 
 class TaskList(generic.ListView):
@@ -9,3 +9,6 @@ class TaskList(generic.ListView):
     template_name = "core/index.html"
 
 
+class TagList(generic.ListView):
+    model = Tag
+    template_name = "core/tags.html"
