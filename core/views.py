@@ -22,6 +22,12 @@ class TaskUpdateView(generic.UpdateView):
     fields = "__all__"
     success_url = reverse_lazy('core:home')
 
+
+class TaskDeleteView(generic.DeleteView):
+    model = Task
+    success_url = reverse_lazy('core:home')
+
+
 class TagListView(generic.ListView):
     model = Tag
     template_name = "core/tags.html"
