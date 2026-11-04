@@ -21,3 +21,13 @@ class TagCreateView(generic.CreateView):
     fields = "__all__"
     success_url = reverse_lazy('core:tags')
 
+
+class TagUpdateView(generic.UpdateView):
+    model = Tag
+    fields = "__all__"
+    success_url = reverse_lazy('core:tags')
+
+
+class TagDeleteView(generic.DeleteView):
+    model = Tag
+    success_url = reverse_lazy('core:tags')
