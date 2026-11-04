@@ -11,6 +11,13 @@ class TaskListView(generic.ListView):
     template_name = "core/index.html"
 
 
+class TaskCreateView(generic.CreateView):
+    model = Task
+    fields = "__all__"
+    success_url = reverse_lazy('core:home')
+
+
+
 class TagListView(generic.ListView):
     model = Tag
     template_name = "core/tags.html"
