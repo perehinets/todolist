@@ -8,16 +8,27 @@
       Create
     </a>
   </div>
-  <ul class="list-group">
+  <ul class="class=list-group-item">
     {% for task in task_list %}
-      <li class="">{{ task.content }}</li>
-      <li>{{ task.datetime }}</li>
-      <li>
-        Tags: {% for tag in task.tags.all %} {{ tag.name }} {% endfor %}
-      </li>
-      <li><a href="{% url 'core:task-update' pk=task.id %}">Update</a></li>
-      <li><a href="{% url 'core:task-delete' pk=task.id %}">Delete</a></li>
-      <hr>
+      <div class="list-group">
+        <div class="list-group-item list-group-item-action" aria-current="true">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ task.content }}</h5>
+            <small>{{ task.datetime }}</small>
+          </div>
+          <small>
+            {% for tag in task.tags.all %}
+              #{{ tag }}
+            {% endfor %}
+          </small>
+          <p class="mb-1">
+            <a href="{% url 'core:task-update' pk=task.id %}">Update </a>
+            <a href="{% url 'core:task-delete' pk=task.id %}">Delete</a>
+          </p>
+        </div>
+      </div>
+
+
     {% endfor %}
   </ul>
 {% endblock %}
